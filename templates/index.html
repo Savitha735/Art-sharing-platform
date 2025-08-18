@@ -1,9 +1,128 @@
 <!DOCTYPE html>
-<html>
-    <head><title>ARTCONNECT</title></head>
-    <body>
-        <h2>Discover,Share and Celebrate Creativity</h2>
-        <h3>“Join a vibrant community of artists and art lovers. Showcase your creations, explore inspiring artworks, and connect with fellow creatives.”</h3>
-   <button><a href="/auth/signup">Signup</a></button><button><a href="/gallery">Explore Gallery</a></button>
-    </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ArtConnect - Home</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="\static\css\style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero d-flex flex-column justify-content-center align-items-center">
+    <h1>Discover, Share, and Celebrate Creativity</h1>
+    <p>Join a vibrant community of artists and art lovers. Showcase your creations, explore inspiring artworks, and connect with fellow creatives.</p>
+    <div>
+      <a href="\auth\signup" class="btn btn-primary btn-lg m-2">Sign Up</a>
+      <a href="\gallery" class="btn btn-outline-light btn-lg m-2">Explore Gallery</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="container text-center py-5">
+    <h2 class="mb-4">Why Choose ArtConnect?</h2>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="feature-icon mb-3">🎨</div>
+        <h5>Showcase Your Art</h5>
+        <p>Upload your artworks and create your personal gallery.</p>
+      </div>
+      <div class="col-md-3">
+        <div class="feature-icon mb-3">🤝</div>
+        <h5>Connect with Artists</h5>
+        <p>Follow, like, and comment to engage with other creatives.</p>
+      </div>
+      <div class="col-md-3">
+        <div class="feature-icon mb-3">💡</div>
+        <h5>Discover Inspiration</h5>
+        <p>Explore trending artworks and find ideas for your next masterpiece.</p>
+      </div>
+      <div class="col-md-3">
+        <div class="feature-icon mb-3">🔒</div>
+        <h5>Secure & Easy</h5>
+        <p>Your creations are safe, and sharing is just a few clicks away.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="bg-grey">
+    <div class="container text-center">
+      <h2 class="mb-4">Getting Started is Easy</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <h5>1. Sign Up & Create Profile</h5>
+          <p>Join in seconds and start building your gallery.</p>
+        </div>
+        <div class="col-md-4">
+          <h5>2. Upload Art</h5>
+          <p>Share your creations with the community.</p>
+        </div>
+        <div class="col-md-4">
+          <h5>3. Connect & Explore</h5>
+          <p>Follow artists, comment, and get inspired.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Art Section -->
+  <section class="container py-5">
+    <h2 class="text-center mb-4">Featured Artworks</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="featured-art">
+          <img src="\static\pics\krishna.png" alt="Art 1">
+          <p class="mt-2"><strong>Artist:</strong> Savitha K. | ❤️ 120</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="featured-art">
+          <img src="\static\pics\eyes.jpg" alt="Art 2">
+          <p class="mt-2"><strong>Artist:</strong> Ben T. | ❤️ 95</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="featured-art">
+          <img src="\static\pics\spidy (1).jpg" alt="Art 3">
+          <p class="mt-2"><strong>Artist:</strong> Tom L. | ❤️ 150</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonial text-center">
+    <div class="container">
+      <h2 class="mb-4">What Our Artists Say</h2>
+      <blockquote class="blockquote">
+        <p>“I finally have a space to showcase my work and get inspired every day.”</p>
+        <footer class="blockquote-footer">IVAS</footer>
+      </blockquote>
+      <blockquote class="blockquote mt-4">
+        <p>“A vibrant community that connects creators globally.”</p>
+        <footer class="blockquote-footer">SATHYA</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <div class="container">
+      <p>
+        <a href="#">Home</a> | 
+        <a href="#">Explore</a> | 
+        <a href="#">About</a> | 
+        <a href="#">Contact</a> | 
+        <a href="#">Login/Signup</a>
+      </p>
+      <p>© 2025 ArtConnect. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
