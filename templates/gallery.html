@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Art Sharing Platform</title>
+    </head>
+    <body>
+        <h1>Art Gallery</h1>
+        <a href="/upload">Upload New Art</a>
+        <hr>
+        {% if username %}
+          <h3>WELCOME {{username}}</h3>
+        {% else %} 
+          <h3>WELCOME</h3>
+        {% endif %}  
+        {% if posts %}
+           {% for post in posts %}
+               <div>
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.description }}</p>
+                {% if post.img_url %}
+                   <img src="{{ post.img_url}}" alt="{{ post.title}}" width="300">
+                {% endif %}   
+                <hr>
+               </div>
+            {% endfor %}
+        {% else %}
+            <p>No art posts yet. Be the first to upload</p>
+        {% endif %}   
+    </body>
+</html>
