@@ -1,0 +1,87 @@
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #8b4242; /* light gray background */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+h3{
+    color:aliceblue;
+    padding-top:10%;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* Form container */
+.form-container {
+  margin-left: 35%;
+  background: rgb(252, 153, 153);
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,1.5);
+  width: 100%;
+  max-width: 400px;
+
+}
+
+/* Form heading */
+.form-container h2 {
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* Input fields */
+.form-container input[type="text"],
+.form-container input[type="email"]
+ {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.form-container input[type="password"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Button styling */
+.form-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #cf5f37;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form-container button:hover {
+  background-color:#942f2d;
+}
+
+/* Login link */
+.form-container a {
+  display: inline-block;
+  margin-top: 15px;
+  color: #942f2d;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.form-container a:hover {
+  color: white;
+  text-decoration: underline;
+}

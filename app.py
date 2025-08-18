@@ -28,13 +28,13 @@ def upload():
         description=request.form['description']
         file = request.files['image_file']
 
-        # Save temporarily
-        file_path = file.filename
-        file.save(file_path)
-
+        user_id=session.get("user_id")
+        if not user_id:
+            return "Unauthorized: Please log in first", 403
+        file_path=f"{user_id}/{file.filename}"
         # Upload to Supabase Storage
         bucket_name = "artworks"
-        supabase.storage.from_(bucket_name).upload(file_path, open(file_path, "rb"))
+        supabase.storage.from_(bucket_name).upload(file_path,file.read())
 
         # Get public URL
         img_url = supabase.storage.from_(bucket_name).get_public_url(file_path)
@@ -43,10 +43,11 @@ def upload():
         supabase.table("art_posts").insert({
             "title": title,
             "description": description,
-           "img_url": img_url
+           "img_url": img_url,
+           "user_id": user_id
        }).execute()    
 
-        return redirect('/')
+        return redirect('/gallery')
 
     return render_template('upload.html')
 if __name__=='__main__':
