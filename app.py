@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request,redirect
+from flask import Flask,render_template,request,redirect,session
 import os
 from supabase_client import supabase
 from dotenv import load_dotenv
@@ -13,8 +13,13 @@ app.register_blueprint(auth_bp)
 
 @app.route('/')
 def index():
+    return render_template('index.html')
+
+@app.route('/gallery',methods=['GET','POST'])
+def gallery():
     data=supabase.table("art_posts").select("*").execute()
-    return render_template('index.html',posts=data.data)
+    username=session.get("username")
+    return render_template('gallery.html',posts=data.data,username=username)
 
 @app.route('/upload',methods=['GET','POST'])
 def upload():
