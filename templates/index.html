@@ -7,6 +7,11 @@
         <h1>Art Gallery</h1>
         <a href="/upload">Upload New Art</a>
         <hr>
+        {% if username %}
+          <h3>WELCOME {{username}}</h3>
+        {% else %} 
+          <h3>WELCOME</h3>
+        {% endif %}  
         {% if posts %}
            {% for post in posts %}
                <div>

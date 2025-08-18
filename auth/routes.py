@@ -1,11 +1,7 @@
 from flask import render_template, request, redirect, session
 from . import auth_bp
-import os
-from dotenv import load_dotenv
 from supabase_client import supabase
 from gotrue.errors import AuthApiError
-
-load_dotenv()
 
 
 @auth_bp.route("/signup", methods=["GET", "POST"])
@@ -13,11 +9,16 @@ def signup():
     if request.method == "POST":
         email = request.form["email"]
         password = request.form["password"]
+        username= request.form["username"]
 
         try:
             res = supabase.auth.sign_up({
                 "email": email,
-                "password": password
+                "password": password,
+                  "options": {
+                "data": {   # custom user metadata
+                "username": username
+            }}
             })
 
             # If sign up succeeded
