@@ -48,7 +48,9 @@ def login():
 
             if res.user:
                 session["user"] = res.user.email
-                return redirect("/")
+                user = res.user
+                session["username"] = user.user_metadata.get("username")
+                return redirect("/gallery")
             else:
                 return "Invalid login"
 

@@ -21,6 +21,24 @@ def gallery():
     username=session.get("username")
     return render_template('gallery.html',posts=data.data,username=username)
 
+@app.route('/mygallery', methods=['GET'])
+def my_gallery():
+    user_id = session.get("user_id")
+    username = session.get("username")
+
+    if not user_id:
+        return "Unauthorized: Please log in first", 403
+
+    # Fetch only this user's artworks
+    data = (
+        supabase.table("art_posts")
+        .select("*")
+        .eq("user_id", user_id)
+        .execute()
+    )
+
+    return render_template('mygallery.html', posts=data.data, username=username)
+
 @app.route('/upload',methods=['GET','POST'])
 def upload():
     if request.method== 'POST':
@@ -47,7 +65,7 @@ def upload():
            "user_id": user_id
        }).execute()    
 
-        return redirect('/gallery')
+        return redirect('/mygallery')
 
     return render_template('upload.html')
 if __name__=='__main__':
