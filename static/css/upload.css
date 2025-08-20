@@ -1,20 +1,19 @@
-
-body {
+body
+{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #8b4242; 
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  margin: 0;
 }
 
-h3{
+
+h1{
     color:aliceblue;
-    padding-top:10%;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-/* Form container */
+
 .form-container {
   margin-left: 35%;
   background: rgb(252, 153, 153);
@@ -26,27 +25,36 @@ h3{
 
 }
 
-/* Form heading */
-.form-container h2 {
-  margin-bottom: 25px;
-  color: #333;
-}
-
-/* Input fields */
-.form-container input[type="text"],
-.form-container input[type="email"]
- {
+.form-container textarea {
   width: 100%;
+  min-height: 120px;
   padding: 12px 15px;
-  margin: 10px 0 20px 0;
+  font-size: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   border: 1px solid #ccc;
   border-radius: 8px;
-  font-size: 16px;
-  text-align: center;
+  resize: vertical; /* allow vertical resize only */
+  outline: none;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 
-.form-container input[type="password"] {
-  width: 100%;
+/* When user focuses */
+.form-container textarea:focus {
+  border-color: #8b4242;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.4);
+}
+
+/* Optional: placeholder styling */
+.form-container textarea::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+.form-container input[type="text"],
+.form-container input[type="file"]
+ {
+  width: 92%;
   padding: 12px 15px;
   margin: 10px 0 20px 0;
   border: 1px solid #ccc;
@@ -72,7 +80,6 @@ h3{
   background-color:#942f2d;
 }
 
-/* Login link */
 .form-container a {
   display: inline-block;
   margin-top: 15px;
@@ -81,7 +88,7 @@ h3{
   transition: color 0.3s ease;
 }
 
-.form-container a:hover {
+.form-container  a:hover {
   color: white;
   text-decoration: underline;
 }
