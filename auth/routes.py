@@ -47,7 +47,8 @@ def login():
             })
 
             if res.user:
-                session["user"] = res.user.email
+                session["user_id"] = res.user.id 
+                session["email"] = res.user.email
                 user = res.user
                 session["username"] = user.user_metadata.get("username")
                 return redirect("/gallery")
@@ -60,5 +61,5 @@ def login():
 
 @auth_bp.route("/logout")
 def logout():
-    session.pop("user", None)
+    session.clear()
     return redirect("/auth/login")
